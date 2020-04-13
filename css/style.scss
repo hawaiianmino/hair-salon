@@ -43,7 +43,7 @@ $sp: 480px;  // スマホ
 ******************/
 html{
     width: 100%;
-    min-width: 1200px;
+    // min-width: 1200px;
     @include tab(){
         min-width: 992px;
     }
