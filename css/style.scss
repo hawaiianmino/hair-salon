@@ -45,7 +45,7 @@ html{
     width: 100%;
     // min-width: 1200px;
     @include tab(){
-        min-width: 992px;
+        // min-width: 992px;
     }
 }
 body{
