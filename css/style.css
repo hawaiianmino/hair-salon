@@ -28,8 +28,8 @@ body {
 
 @media (max-width: 992px) {
   .inner {
-    padding-right: 135px !important;
-    padding-left: 135px !important;
+    padding-right: 50px !important;
+    padding-left: 50px !important;
     width: initial;
   }
 }
@@ -96,6 +96,12 @@ body {
   cursor: pointer;
   position: relative;
   z-index: 0;
+}
+
+@media (max-width: 992px) {
+  .view-btn {
+    font-size: 1.3rem;
+  }
 }
 
 .view-btn:hover::after {
@@ -308,6 +314,7 @@ header {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 70%;
   }
 }
 
@@ -421,6 +428,12 @@ header {
   padding: 10px;
 }
 
+@media (max-width: 992px) {
+  #gallery .gallery-img li {
+    width: 33.33333333%;
+  }
+}
+
 /******************
      7. About
 ******************/
@@ -439,6 +452,23 @@ header {
   width: 50%;
 }
 
+@media (max-width: 992px) {
+  .about-txt {
+    width: 40%;
+  }
+  .about-txt__btn {
+    display: flex;
+    flex-direction: column;
+  }
+  .about-txt__btn a:nth-child(2) {
+    margin-top: 5px;
+  }
+  .about-txt__btn a {
+    display: inline-block;
+    width: 130px;
+  }
+}
+
 .about-map {
   width: 60%;
   position: absolute;
@@ -448,7 +478,7 @@ header {
 
 @media (max-width: 992px) {
   .about-map {
-    width: 50%;
+    width: 60%;
     right: 0;
   }
 }
