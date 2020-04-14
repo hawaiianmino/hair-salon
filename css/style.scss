@@ -14,7 +14,7 @@
 ******************/
 // レスポンシブ
 $pc: 1024px; // PC
-$tab:  992px; // タブレット
+$tab:  768px; // タブレット
 $sp: 480px;  // スマホ
 @mixin pc {
     @media (max-width: ($pc)) {
@@ -58,6 +58,10 @@ body{
         padding-right: 50px!important;
         padding-left: 50px!important;
         width: initial;
+    }
+    @include sp(){
+        padding-right: 10px!important;
+        padding-left: 10px!important;
     }
 }
 .section-ttl{
@@ -167,6 +171,9 @@ header{
     height: 84px;
     @include flex();
     padding: 0 20px;
+    @include sp(){
+        height: 60px;
+    }
 }
 .header-menu{
     @include flex();
@@ -233,6 +240,10 @@ header{
   position: relative;
   width: 50px;
   height: 44px;
+  @include sp(){
+      width: 30px;
+      height: 24px;
+  }
 }
 .menu-trigger span {
   position: absolute;
@@ -241,12 +252,18 @@ header{
   height: 4px;
   background-color: #555;
   border-radius: 4px;
+  @include sp(){
+      height: 2px;
+  }
 }
 .menu-trigger span:nth-of-type(1) {
   top: 0;
 }
 .menu-trigger span:nth-of-type(2) {
   top: 20px;
+  @include sp(){
+      top: 11px;
+  }
 }
 .menu-trigger span:nth-of-type(3) {
   bottom: 0;
@@ -254,6 +271,10 @@ header{
 .menu-trigger.active span:nth-of-type(1) {
     -webkit-transform: translateY(20px) rotate(-45deg);
     transform: translateY(20px) rotate(-45deg);
+    @include sp(){
+        -webkit-transform: translateY(11px) rotate(-45deg);
+        transform: translateY(11px) rotate(-45deg);
+    }
   }
   .menu-trigger.active span:nth-of-type(2) {
     opacity: 0;
@@ -261,6 +282,10 @@ header{
   .menu-trigger.active span:nth-of-type(3) {
     -webkit-transform: translateY(-20px) rotate(45deg);
     transform: translateY(-20px) rotate(45deg);
+    @include sp(){
+        -webkit-transform: translateY(-11px) rotate(45deg);
+        transform: translateY(-11px) rotate(45deg);
+    }
   }
 /******************
      2. fv
@@ -291,6 +316,10 @@ header{
             transform: translate(-50%,-50%);
             width: 70%;
         }
+        @include sp(){
+            font-size:  3.8rem;
+            width: 90%;
+        }
     }
 }
 /******************
@@ -298,6 +327,9 @@ header{
 ******************/
 #news{
     @include flex();
+    @include sp{
+        display: block;
+    }
 }
 .news-wrap{
     @include flex();
@@ -313,10 +345,20 @@ header{
             position: absolute;
             top: 6px;
             right: -40px;
+            @include sp(){
+                right: -10px;
+            }
         }
+        @include sp(){
+            margin-right: 10px;
+        }
+        
     }
     p{
         margin-left: 30px;
+        @include sp(){
+            margin-left: 10px;
+        }
     }
 }
 .news-btn{
@@ -337,6 +379,15 @@ header{
     .concept-img{
         width: 50%;
     }
+    @include sp(){
+        flex-direction: column-reverse;
+        .concept-txt{
+            width: 100%;
+        }
+        .concept-img{
+            width: 100%;
+        }
+    }
 }
 /******************
      5. MENU
@@ -346,12 +397,23 @@ header{
     .menu-wrap{
         @include flex();
         align-items: flex-end;
+        @include sp(){
+            display: block;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    }
+    @include sp(){
+        margin-bottom: 0;
     }
 }
 .menu-img{
     width: 50%;
     img{
         vertical-align: bottom;
+    }
+    @include sp(){
+        width: 100%;
     }
 }
 .menu-txt{
@@ -360,6 +422,11 @@ header{
     padding-left: 60px;
     padding-bottom: 50px;
     position: relative;
+    @include sp(){
+        width: 100%;
+        padding-left: 0;
+        padding-bottom: 0;
+    }
     &:before{
         content: '';
         width:   calc(100% + 200px);
@@ -370,6 +437,9 @@ header{
         top: -70px;
         left: -200px;
         z-index: -1;
+        @include sp(){
+            content: none;
+        }
     }
 }
 /******************
@@ -385,6 +455,10 @@ header{
             @include tab(){
                 width: 33.33333333%;
             }
+            @include sp(){
+                width: 100%;
+                padding: 5px;
+            }
         }
     }
 }
@@ -396,6 +470,12 @@ header{
     .inner{
         @include flex();
         position: relative;
+        @include sp(){
+            display: block;
+        }
+    }
+    @include sp(){
+        background-image: none;
     }
 }
 .about-txt{
@@ -414,6 +494,20 @@ header{
                 // width: 140px;
             }
         }
+        @include sp(){
+            width: 100%;
+        }
+    }
+    @include sp(){
+        width: 100%;
+        margin-bottom: 30px;
+        &__btn{
+            flex-direction: initial;
+            justify-content: center;
+            a:nth-child(2){
+                margin-top: 0;
+            }
+        }
     }
 }
 .about-map{
@@ -424,6 +518,10 @@ header{
     @include tab(){
         width: 60%;
         right: 0;
+    }
+    @include sp(){
+        width: 100%;
+        position: static;
     }
 
 }
@@ -436,12 +534,21 @@ header{
     background-size: cover;
     background-color: rgba(255,255,255,0.5);
     background-blend-mode: lighten;
+    @include sp(){
+        margin-top: 0;
+        p{
+            font-size: 1.4rem;
+        }
+    }
 }
 /******************
      9. Blog
 ******************/
 #blog{
     margin-bottom: 200px;
+    @include sp(){
+        margin-bottom: 0;
+    }
 }
 .blog-cont{
     @include flex();
@@ -453,6 +560,9 @@ header{
         padding-right: 10px;
         @include tab(){
             width: 50%;
+        }
+        @include sp(){
+            width: 100%;
         }
     }
 }
@@ -466,6 +576,11 @@ footer{
     @include tab(){
         position: relative;
     }
+    @include sp(){
+        display: flex;
+        flex-direction: column-reverse;
+        padding-bottom: 0!important;
+    }
 }
 .footer-txt{
     width: 60%;
@@ -475,11 +590,20 @@ footer{
         width: 100%;
         height: 325px;
     }
+    @include sp(){
+        height: auto;
+        padding: 10px 0;
+    }
     .section-ttl{
         color: #fff;
         @include tab(){
             text-align: center;
             margin-top:  220px;
+        }
+        @include sp(){
+            margin-top: 0;
+            margin-bottom: 0;
+            font-size: 1.8rem;
         }
     }
     p{
@@ -514,5 +638,10 @@ footer{
         position: absolute;
         top: -140px;
         right: 0;
+    }
+    @include sp(){
+        position: static;
+        width: 100%;
+        padding: 10px;
     }
 }
